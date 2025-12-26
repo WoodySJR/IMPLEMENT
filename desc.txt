@@ -1,0 +1,1 @@
+This is the official repo of paper "Online Imaginative Policy Iteration for Embodied LLM Agents" submitted to ACL'26. 
