@@ -261,17 +261,6 @@ IMPLEMENT consistently outperforms finetuning-based and test-time scaling approa
 
 *Table 1: Performance comparison on ALFWorld. IMPLEMENT achieves the best results across different policy backbones and evaluation budgets.*
 
-**Highlights with GPT-4.1-mini:**
-
-| Method | Success @ 1 | Success @ 6 | Success @ 12 |
-|--------|-------------|-------------|--------------|
-| Vanilla VLM | 31% | 55% | 55% |
-| EMMA (finetuning) | 19% | 58% | 82% |
-| ReAct | 35% | 72% | 81% |
-| Reflexion | 46% | 74% | 78% |
-| Self-Consistency | 48% | 71% | 79% |
-| **IMPLEMENT (ours)** | **66%** | **86%** | **88%** |
-
 ### Ablation Studies
 
 ![Ablation Studies](figures/ablation_whole.png)
