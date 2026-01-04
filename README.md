@@ -2,7 +2,7 @@
 
 Official implementation of **"Model-Based Online Policy Iteration for Embodied LLM Agents"**.
 
-> **Note**: This is an anonymous repository for the review process.
+> **Note**: This is an anonymous repository for the review process. The world model training data is hosted on huggingface and will be shared as well upon acceptance. 
 
 ## Overview
 
