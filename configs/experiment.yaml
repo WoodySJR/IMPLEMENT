@@ -1,0 +1,62 @@
+# =============================================================================
+# IMPLEMENT: Experiment Configuration
+# =============================================================================
+
+# API settings (replace with your own credentials)
+api:
+  # OpenAI-compatible API settings
+  base_url: "YOUR_API_BASE_URL"
+  api_key: "YOUR_API_KEY"
+
+# World Model server settings (vLLM deployment)
+world_model_server:
+  host: "localhost"
+  port: 8002
+  served_model_name: "wm_metaicl"
+  
+  # vLLM performance settings
+  tensor_parallel_size: 4
+  gpu_memory_utilization: 0.85
+  enable_prefix_caching: True
+  max_num_batched_tokens: 8192
+
+# Policy LLM settings
+policy:
+  # Supported models: gpt-4.1, gpt-4.1-mini, gemini-2.5-flash, qwen2.5-vl-72b-instruct
+  model: "gpt-4.1-mini"
+  temperature: 1.0
+  
+  # Belief state summarization model (use cheaper model)
+  belief_model: "gpt-4.1-mini"
+
+# IMPLEMENT algorithm settings (Section 3.3)
+implement:
+  # Maximum LLM-WM interaction rounds per environment step (R in Algorithm 1)
+  max_rounds: 5
+  
+  # Number of candidate action sequences to sample (n in Eq.6)
+  num_candidates: 8
+  
+  # Planning horizon (H in paper)
+  planning_horizon: 1
+  
+  # Monte Carlo rollouts for state prediction (M in Eq.7)
+  num_mc_rollouts: 10
+  
+  # World model sampling temperature (from paper)
+  wm_temperature: 1.0
+  
+  # Task horizon
+  task_horizon: 30
+
+# Evaluation settings
+evaluation:
+  batch_size: 5
+  num_trials: 12  # Number of trials for evaluation
+  seed: 928
+
+# Parallel workers
+workers:
+  api_workers: 20
+  vllm_workers: 100
+

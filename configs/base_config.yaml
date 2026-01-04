@@ -1,0 +1,34 @@
+# =============================================================================
+# IMPLEMENT: Base Configuration for ALFWorld Environment
+# =============================================================================
+
+# Environment settings
+env:
+  type: "AlfredThorEnv"  # Environment type: AlfredThorEnv, AlfredTWEnv, or AlfredHybrid
+  thor:
+    save_frames_to_disk: false
+    save_frames_path: null
+  goal_desc_human_anns_prob: 0.0
+  # Task types: 1-Pick&Place, 2-Examine in Light, 3-Clean&Place, 
+  #             4-Heat&Place, 5-Cool&Place, 6-Pick Two&Place
+  task_types: [1, 2, 3, 4, 5, 6]
+
+# Controller settings
+controller:
+  type: "oracle"  # Use oracle controller for low-level execution
+  load_receps: false
+
+# Dataset settings
+dataset:
+  num_train_games: -1  # -1 means all training games
+  num_eval_games: -1   # -1 means all evaluation games
+
+# Training method
+general:
+  training_method: "dagger"
+
+# DAgger settings
+dagger:
+  training:
+    max_nb_steps_per_episode: 30  # Maximum steps per episode (task horizon T)
+
